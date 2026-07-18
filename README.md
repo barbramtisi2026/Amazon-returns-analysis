@@ -14,26 +14,43 @@ Source: [Kaggle — Synthetic E-Commerce Returns Management Dataset](https://www
 ## Tools Used
 - **SQL** (SQLite) — data extraction, aggregation, return-rate calculations
 - **Python** (pandas, scipy) — data cleaning, feature engineering, statistical testing
-- **Tableau** — dashboards and visualization
+- **Tableau** — interactive dashboard and visualization
 
-## Key Findings So Far
-- **Overall return rate: 29%** (1,450 of 5,000 orders)
-- **Clothing is the top offender** — highest return rate (37.4%) *and* highest total return cost ($132,200), more than double the next category
-- Return reasons are fairly evenly split company-wide (Defective 26%, Changed Mind 26%, Wrong Item 24%, Size Issue 24%) — no single dominant cause
-- **Tested and ruled out:** a hypothesis that fast returns signal listing/expectation mismatches while slow returns signal quality issues — statistically no relationship in this data (chi-square p = 0.47)
+## Dashboard
+🔗 **[View the live interactive dashboard on Tableau Public](https://public.tableau.com/views/AmazonReturnsAnalysis/ReturnsOverviewDashboard?)
 
-*(This section will be updated as the analysis progresses through Python and Tableau.)*
+## Key Findings
+
+**1. Discount level is the strongest predictor of returns — and it's actionable**
+Orders with **31%+ discounts** show a **33–35% return rate**, compared to **24–27%** for orders discounted below 30%. This relationship is statistically significant (t-test, p < 0.0001), not just a visual pattern. Unlike category or customer demographics, discount policy is a lever the business can directly control.
+
+**2. Clothing is the top problem category — on every measure**
+Clothing has both the **highest return rate (37.4%)** and the **highest total return cost ($132,200)** — more than double the next closest category (Electronics, $62,800). It also dominates the list of individual highest-cost products.
+
+**3. No single dominant return reason — ruling out a one-size-fits-all fix**
+Return reasons (Defective, Changed Mind, Wrong Item, Size Issue) are fairly evenly split, both company-wide and *within* each category (all roughly 22–29%). This rules out simple fixes like "just improve sizing charts" — the problem is spread across causes and needs a multi-pronged response, particularly for Clothing.
+
+**4. A small watch-list of individual products carries outsized risk**
+Several specific products show near-100% return rates even at lower order volumes — worth targeted investigation (listing accuracy, defective batches, mismatched expectations) independent of category-wide trends.
+
+**5. Tested and correctly ruled out:** Price, customer age, and return speed (days-to-return) showed **no statistically significant relationship** with return likelihood (all p > 0.05). Notably, a hypothesis that fast returns signal listing mismatches while slow returns signal quality issues did not hold up (chi-square p = 0.47) — an important negative finding that kept the analysis focused on what the data actually supports.
+
+## Recommendations
+1. **Review discount strategy above the 30% threshold** — audit whether deep-discount campaigns are worth the return costs they generate; consider tighter return windows or final-sale terms for heavily discounted items.
+2. **Prioritize Clothing for root-cause review** — since no single reason dominates, effective fixes likely require a combined approach: clearer sizing guidance, better product photography/descriptions, and tighter quality control.
+3. **Investigate watch-list products individually** rather than applying category-wide policy changes.
+4. **Deprioritize return-speed as a triage signal** — resources are better spent on discount policy and category-level fixes, which show real statistical relationships.
 
 ## Project Structure
 ```
 /sql        → SQL extraction & aggregation queries
-/python     → data cleaning, feature engineering, analysis notebook
-/tableau    → dashboards and workbook
+/python     → data cleaning, feature engineering, statistical analysis
+/tableau    → dashboard workbook (also published to Tableau Public)
 README.md   → this file
 ```
 
 ## Status
-In progress 
+✅ Complete — SQL exploration, Python analysis, and Tableau dashboard all finished.
 
 ## Author
 Barbra Mtisi — [LinkedIn](https://www.linkedin.com/in/barbra-mtisi-89602422b/)
