@@ -50,7 +50,7 @@ README.md   → this file
 ```
 
 ## Status
-✅ Complete — SQL exploration, Python analysis, and Tableau dashboard all finished.
+✅ In progress — SQL exploration and Python analysis complete; Tableau dashboard still in progress.
 
 ## Author
 Barbra Mtisi — [LinkedIn](https://www.linkedin.com/in/barbra-mtisi-89602422b/)
