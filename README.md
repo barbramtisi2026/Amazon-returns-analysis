@@ -18,8 +18,11 @@ Source: [Kaggle — Synthetic E-Commerce Returns Management Dataset](https://www
 
 ## Dashboard
 🔗 **[View the live interactive dashboard on Tableau Public](https://public.tableau.com/views/AmazonReturnsAnalysis/ReturnsOverviewDashboard?)
+<img width="1361" height="685" alt="Tableau Dashboard 1" src="https://github.com/user-attachments/assets/dfb0ec7a-ab8f-4b8d-9e11-ba9ef52e8fcc" />
+<img width="1380" height="507" alt="Tableau Dashboard 2" src="https://github.com/user-attachments/assets/778a4185-bf7a-4ceb-a7ea-90289f59b6d3" />
 
 ## Key Findings
+
 
 **1. Discount level is the strongest predictor of returns — and it's actionable**
 Orders with **31%+ discounts** show a **33–35% return rate**, compared to **24–27%** for orders discounted below 30%. This relationship is statistically significant (t-test, p < 0.0001), not just a visual pattern. Unlike category or customer demographics, discount policy is a lever the business can directly control.
@@ -50,7 +53,9 @@ README.md   → this file
 ```
 
 ## Status
-✅ In progress — SQL exploration and Python analysis complete; Tableau dashboard still in progress.
+✅ Complete — SQL exploration, Python analysis, and Tableau dashboard all finished.
 
 ## Author
 Barbra Mtisi — [LinkedIn](https://www.linkedin.com/in/barbra-mtisi-89602422b/)
+
+
